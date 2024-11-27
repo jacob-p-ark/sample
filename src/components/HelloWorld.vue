@@ -36,9 +36,18 @@ defineProps({
 
 const count = ref(0)
 
-axios.get('/api/trigger-error').then(res => {
-  console.log('res: ', res)
+// axios.get('/api/trigger-error').then(res => {
+//   console.log('\'/api/trigger-error\': ', res)
+// })
+
+axios.get('/api/servlets/vkeypad.do').then(res => {
+  console.log('/api/servlets/vkeypad.do: ', res)
 })
+
+// axios.get('/api/error').then(res => {
+//   console.log('/api/error: ', res)
+// })
+
 </script>
 <style scoped>
 .read-the-docs {

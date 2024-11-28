@@ -74,12 +74,32 @@ const updateChartOptions = () => {
       chartOptions.value = {
         chart: { type: 'ohlc' },
         title: { text: 'Stock Chart (OHLC)' },
+        xAxis: {
+          type: 'datetime', // x축을 시간으로 설정
+          labels: {
+            format: '{value:%Y-%m-%d}', // YYYY-MM-DD 형식으로 표시
+          },
+        },
         series: [{
+          type: 'ohlc',
           name: 'Stock Price',
           data: props.data, // OHLC 데이터
-          tooltip: {
-            valueDecimals: 2,
-          },
+          // tooltip: {
+          //   shared: true,
+          //   formatter: function () {
+          //     const point = this.points?.[0];
+          //     if (!point) return '';
+          //     const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
+          //     const ohlcData = point.point.options;
+          //     return `
+          //   <b>${date}</b><br/>
+          //   Open: <b>$${ohlcData.open}</b><br/>
+          //   High: <b>$${ohlcData.high}</b><br/>
+          //   Low: <b>$${ohlcData.low}</b><br/>
+          //   Close: <b>$${ohlcData.close}</b><br/>
+          // `;
+          //   },
+          // },
         }],
       };
       break;

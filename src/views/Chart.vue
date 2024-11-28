@@ -9,7 +9,7 @@
         active-color="primary"
         indicator-color="primary"
     >
-      <q-tab v-for="tab in tabs" :key="tab.id" :name="tab.id" :label="tab.label"></q-tab>
+      <q-tab v-for="tab in tabs" :key="tab.id" :name="tab.id" :label="tab.label">그래프 | </q-tab>
     </q-tabs>
 
     <!-- 탭 내용 (활성 탭에 따라 그래프 변경) -->
